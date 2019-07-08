@@ -1,0 +1,26 @@
+{
+  "pets": [
+    {
+      "id": "1",
+      "name": "Lucy",
+      "imageUrl": "http://placekitten.com/200/300",
+      "age": 1,
+      "favoriteActivities": ["eating", "bird watching", "sleeping"]
+    },
+    {
+      "id": "2",
+      "name": "Shadow",
+      "imageUrl": "http://placekitten.com/200/300",
+      "age": 7,
+      "favoriteActivities": ["rolling around on the floor"]
+    }
+  ],
+  "employees": [
+    {
+      "id": "3",
+      "name": "Bill Murray",
+      "position": "Cat Sitter",
+      "imageUrl": "https://fillmurray.com/300/300"
+    }
+  ]
+}

@@ -41,6 +41,8 @@ const CardHeaderContent = styled.div`
   width: 100%;
 `;
 
+const StackedImagesContainer = styled.div``;
+
 class Card extends React.Component {
   static Header: React.SFC = ({ children }) => {
     return <CardHeader data-testid="card-header">{children}</CardHeader>;
@@ -52,6 +54,18 @@ class Card extends React.Component {
 
   static Image: React.SFC<CardImageProps> = props => {
     return <CardImage {...props} />;
+  };
+
+  static StackedImages: React.SFC<{ images: CardImageProps[] }> = ({
+    images
+  }) => {
+    return (
+      <StackedImagesContainer>
+        {images.map(image => (
+          <Card.Image {...image} key={image.alt} />
+        ))}
+      </StackedImagesContainer>
+    );
   };
 
   static Title: React.SFC = ({ children }) => {

@@ -1,6 +1,6 @@
 import { cleanup, fireEvent, render, wait } from "@testing-library/react";
 import * as React from "react";
-import PetCard from "../completed/PetCard";
+import PetCard from "../PetCard";
 
 const lucy = {
   name: "Lucy",
@@ -9,7 +9,7 @@ const lucy = {
   favoriteActivities: ["Playing with toy mice", "Sleeping", "Eating"]
 };
 
-describe("PetCard", () => {
+xdescribe("PetCard", () => {
   afterEach(cleanup);
 
   it("does not display the card body when it is first rendered", () => {

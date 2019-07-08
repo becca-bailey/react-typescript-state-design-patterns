@@ -35,6 +35,7 @@ class PetCard extends React.Component<PetCardProps, PetCardState> {
           </Card.HeaderContent>
         </Card.Header>
 
+        {/* 👀 Check this visible prop */}
         <Card.Body visible={true}>
           <h3>Age</h3>
           <p>{props.pet.age} years</p>
