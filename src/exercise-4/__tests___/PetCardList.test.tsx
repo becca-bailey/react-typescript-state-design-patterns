@@ -1,8 +1,8 @@
 import * as React from "react";
 import { cleanup, fireEvent, render } from "@testing-library/react";
-import PetCardList from "../completed/PetCardList";
+import PetCardList from "../PetCardList";
 
-describe("PetCardList", () => {
+xdescribe("PetCardList", () => {
   const pets = [
     {
       id: "1",
