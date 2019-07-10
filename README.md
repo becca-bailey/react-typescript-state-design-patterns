@@ -89,7 +89,7 @@ For greenfield projects in 2019, render props are largely being replaced with ho
 
 Hooks are React’s coolest new toy, but I promise I didn’t include them here just to make this workshop seem hip and trendy. The Hooks API is React’s answer to some of the cons of class-based component state and render prop hell.
 
-For the purpose of this workshop, we are going to use the state and context hooks.
+For the purpose of this workshop, we are going to use the state, effect, and context hooks.
 
 [Introducing Hooks – React](https://reactjs.org/docs/hooks-intro.html)
 

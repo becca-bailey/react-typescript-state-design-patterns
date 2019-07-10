@@ -1,5 +1,7 @@
+import { Avatar, Card as MaterialCard, CardContent } from "@material-ui/core";
+import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
+import { makeStyles } from "@material-ui/styles";
 import * as React from "react";
-import styled from "styled-components";
 
 interface CardImageProps {
   src: string;
@@ -15,93 +17,101 @@ interface CardBodyProps {
   visible?: boolean;
 }
 
-const CardContainer = styled.div`
-  background-color: #eeeeee;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  font-family: Roboto, sans-serif;
-  padding: 1rem;
-`;
-
-const CardHeader = styled.div`
-  display: flex;
-`;
-
-const CardImage = styled.img`
-  max-height: 10rem;
-  max-width: 10rem;
-  border-radius: 50%;
-  margin-right: 1rem;
-`;
-
-const CardHeaderContent = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-const StackedImagesContainer = styled.div``;
+const useStyles = makeStyles({
+  cardHeader: {
+    position: "relative",
+    display: "flex",
+    alignItems: "center"
+  },
+  avatar: {
+    width: 100,
+    height: 100,
+    position: "relative",
+    border: "2px solid white"
+  },
+  stackedAvatarContainer: {
+    display: "inline-flex"
+  },
+  expandButton: {
+    border: 0,
+    backgroundColor: "none",
+    position: "absolute",
+    bottom: 10,
+    right: 10,
+    cursor: "pointer",
+    "&:focus": {
+      outline: 0
+    }
+  }
+});
 
 class Card extends React.Component {
   static Header: React.SFC = ({ children }) => {
-    return <CardHeader data-testid="card-header">{children}</CardHeader>;
+    const classes = useStyles();
+    return (
+      <CardContent className={classes.cardHeader} data-testid="card-header">
+        {children}
+      </CardContent>
+    );
   };
 
   static HeaderContent: React.SFC = ({ children }) => {
-    return <CardHeaderContent>{children}</CardHeaderContent>;
+    return <CardContent>{children}</CardContent>;
   };
 
   static Image: React.SFC<CardImageProps> = props => {
-    return <CardImage {...props} />;
+    const classes = useStyles();
+    return <Avatar {...props} className={classes.avatar} />;
   };
 
   static StackedImages: React.SFC<{ images: CardImageProps[] }> = ({
     images
   }) => {
+    const classes = useStyles();
     return (
-      <StackedImagesContainer>
-        {images.map(image => (
-          <Card.Image {...image} key={image.alt} />
+      <div className={classes.stackedAvatarContainer}>
+        {images.map((image, i) => (
+          <Avatar
+            {...image}
+            className={classes.avatar}
+            key={image.alt}
+            style={i > 0 ? { marginLeft: "-60px" } : {}}
+          />
         ))}
-      </StackedImagesContainer>
+      </div>
     );
   };
 
   static Title: React.SFC = ({ children }) => {
-    return (
-      <h2 className="card__title" data-testid="card-title">
-        {children}
-      </h2>
-    );
+    return <h2 data-testid="card-title">{children}</h2>;
   };
 
   static Body: React.SFC<CardBodyProps> = ({ children, visible = true }) => {
-    if (visible) {
-      return (
-        <div className="card__body" data-testid="card-body">
-          {children}
-        </div>
-      );
-    }
-    return <React.Fragment />;
+    return (
+      <React.Fragment>
+        {visible && (
+          <CardContent data-testid="card-body">{children}</CardContent>
+        )}
+      </React.Fragment>
+    );
   };
 
   static Toggle: React.SFC<CardToggleProps> = ({ expanded, onToggle }) => {
+    const classes = useStyles();
     return (
       <button
-        className="card__toggle"
+        className={classes.expandButton}
         onClick={onToggle}
         data-testid="card-toggle"
       >
-        {expanded ? "Close" : "Open"}
+        {expanded ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
       </button>
     );
   };
 
   render() {
     return (
-      <CardContainer data-testid="card">{this.props.children}</CardContainer>
+      <MaterialCard data-testid="card">{this.props.children}</MaterialCard>
     );
   }
 }

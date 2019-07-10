@@ -1,10 +1,8 @@
-import styled from "styled-components";
+import * as React from "react";
+import { Chip } from "@material-ui/core";
 
-const Tag = styled.div`
-  padding: 1rem;
-  border-radius: 5px;
-  background-color: #00b5cc;
-  color: white;
-`;
+const Tag: React.SFC = ({ children }) => {
+  return <Chip label={children} />;
+};
 
 export default Tag;

@@ -37,7 +37,7 @@ const EmployeeCardHeader: React.SFC<EmployeeCardSectionProps> = props => {
       />
       <Card.HeaderContent>
         <Card.Title>{props.employee.name}</Card.Title>
-        <Card.Toggle onToggle={toggle} />
+        <Card.Toggle expanded={expanded} onToggle={toggle} />
       </Card.HeaderContent>
       {!expanded && (
         <div data-testid="tags">

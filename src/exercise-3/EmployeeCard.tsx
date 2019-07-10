@@ -1,8 +1,6 @@
 import * as React from "react";
 import Card from "../components/Card";
 import Tag from "../components/Tag";
-import CardProvider from "./CardProvider";
-import CardContext from "./CardContext";
 import { Employee } from "../types";
 
 // This is an exercise that uses Context to manage state inside this card Component.
