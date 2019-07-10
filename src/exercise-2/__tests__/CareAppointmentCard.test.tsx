@@ -3,6 +3,7 @@ import * as React from "react";
 import CareAppointmentCard from "../CareAppointmentCard";
 
 const lucy = {
+  id: "1",
   name: "Lucy",
   imageUrl: "http://placekitten.com/300/300",
   age: 1,

@@ -15,6 +15,13 @@
       "favoriteActivities": ["rolling around on the floor"]
     }
   ],
+  "owners": [
+    {
+      "name": "Becca",
+      "phoneNumber": "(555) 555-5555",
+      "email": "becca@test.com"
+    }
+  ],
   "employees": [
     {
       "id": "3",
