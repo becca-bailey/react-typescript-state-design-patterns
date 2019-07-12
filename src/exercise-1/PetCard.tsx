@@ -5,7 +5,7 @@ import { Pet } from "../types";
 // This is an exercise that uses setState to manage state inside this card Component.
 
 // Instructions
-// 1. Change xdescribe to describe in __tests__/Card.test.tsx
+// 1. Change xdescribe to describe in __tests__/PetCard.test.tsx
 // 2. Run `yarn test`
 // 3. Add state to this component to make the tests pass.
 // 4. Run `yarn storybook` to preview card
