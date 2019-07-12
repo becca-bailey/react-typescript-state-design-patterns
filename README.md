@@ -67,8 +67,11 @@ React provides a state variable in class components. This is the most basic way 
 
 #### Cons
 
-- Repetition for commonly-used components like modals, alerts, etc.
 - Can only be used in class components
+
+#### Common Pitfalls
+
+- Repetition for commonly-used components like modals, alerts, etc.
 
 ### Render props
 
@@ -86,6 +89,10 @@ Example: https://codesandbox.io/s/dank-cache-50nymw58rk
 #### Cons
 
 - Render prop hell
+
+#### Common Pitfalls
+
+- Over-use of this pattern
 
 ### Hooks
 
@@ -124,5 +131,9 @@ We can use Context globally to share state with the entire application, or we ca
 
 - It might be an overkill for a lot of scenarios
 - May require a React upgrade for established projects
+
+#### Common Pitfalls
+
+- A context consumer couples you to a context provider. Just because you can put one anywhere, that doesn't mean you should.
 
 Example: https://codesandbox.io/s/cool-noether-xo4x32o74z
