@@ -76,6 +76,8 @@ This design pattern has gained a lot of popularity over the past few years as a 
 
 For greenfield projects in 2019, render props are largely being replaced with hooks, but it’s still a great idea to understand this pattern.
 
+Example: https://codesandbox.io/s/dank-cache-50nymw58rk
+
 #### Pros
 
 - Dependency Inversion
@@ -102,6 +104,8 @@ For the purpose of this workshop, we are going to use the state, effect, and con
 - Must follow the rules — we can only use them in the top level of functional components
 - May require a React upgrade for established projects
 
+Example: https://codesandbox.io/s/modal-with-state-hook-bmjb9
+
 ### Context
 
 The Context API provides a way for individual components to access shared state. Context is a great solution to the problem of prop drilling, or passing a prop down through multiple layers of nesting to access it in a child component. Instead, context allows us to create a provider component (the parent component that sets the state) and consumer components (child components that can access the state).
@@ -120,3 +124,5 @@ We can use Context globally to share state with the entire application, or we ca
 
 - It might be an overkill for a lot of scenarios
 - May require a React upgrade for established projects
+
+Example: https://codesandbox.io/s/cool-noether-xo4x32o74z
